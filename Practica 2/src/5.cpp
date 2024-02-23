@@ -1,8 +1,8 @@
 #include <WiFi.h>
 #include <WiFiClient.h>
 
-const char* ssid5 = "Mi_WiFi";
-const char* password5 = "Mi_Password";
+const char* ssid5 = "IoT";
+const char* password5 = "1t3s0IoT23";
 
 WiFiServer server5(80);
 
@@ -63,7 +63,7 @@ void external_led_webserver() {
     client.println("<head><meta charset=utf-8></head>");
     client.println("<body><center><font face='Arial'>");
     client.println("<h1>Servidor web con ESP32.</h1>");
-    client.println("<h1>Guadalupe Torres</h1>");
+    client.println("<h1>Aldair</h1>");
     client.println("<h2><font color='#009900'>Webserver 1.0</font></h2>");
     client.println("<h3>Práctica botón</h3>");
     client.println("<br><br>");
