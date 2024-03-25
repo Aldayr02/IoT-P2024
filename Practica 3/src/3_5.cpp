@@ -3,8 +3,8 @@
 
 #define RST_PIN5 22 //Pin 22 para el reset del RC522
 #define SS_PIN5 21 //pin 21 para el SS(SDA) del RC522
-#define greenLed 12
-#define redLed 14
+#define greenLed 4
+#define redLed 2
 
 MFRC522 mfrc522_5(SS_PIN5, RST_PIN5); // Ovejto del RC522
 
@@ -19,7 +19,7 @@ void setup5()
 }
 
 byte ActualUID[4];
-byte Usuario1[4] = {0x14, 0x1D, 0x78, 0x20};
+byte Usuario1[4] = {0x26, 0xE1, 0x75, 0x33};
 byte Usuario2[4] = {0xC1, 0x2F, 0xD6, 0x0E};
 
 boolean compareArray(byte array1[], byte array2[])
@@ -34,7 +34,8 @@ boolean compareArray(byte array1[], byte array2[])
 
 void access_control_RFID()
 {
-
+    digitalWrite(greenLed, LOW);
+    digitalWrite(redLed, LOW);
     if(mfrc522_5.PICC_IsNewCardPresent())
     {
          if(mfrc522_5.PICC_ReadCardSerial())
